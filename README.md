@@ -1,66 +1,53 @@
-# Titanic-Survival-Prediction-ML-Pipeline-Project
-Overview
+# Titanic Survival Prediction – Machine Learning Classification
 
-This project builds an end-to-end binary classification pipeline to predict passenger survival on the Titanic.
-The emphasis is on clean preprocessing, feature engineering, reproducible pipelines, and model comparison using cross-validation and hyperparameter tuning.
+## Project Overview
+This project builds an end-to-end **machine learning classification pipeline** to predict passenger survival on the **Titanic dataset**.  
+It demonstrates **professional ML workflow practices**, including data preprocessing, feature engineering, model pipelines, cross-validation, and hyperparameter tuning.
 
-Dataset used: Kaggle Titanic – Machine Learning from Disaster
+The goal is not just accuracy, but **clean, reproducible, and production-ready modeling code**.
 
-Objectives
+---
 
-Clean and preprocess structured data
+## Dataset
+- **Source:** Titanic dataset (Kaggle / public ML benchmark)
+- **Target Variable:** `Survived` (0 = No, 1 = Yes)
+- **Features:**  
+  - Numerical: `Age`, `Fare`, `SibSp`, `Parch`
+  - Categorical: `Sex`, `Embarked`, `Pclass`, etc.
 
-Engineer meaningful features
+---
 
-Build reusable ML pipelines
+## Key Concepts Demonstrated
+- Feature type separation (numerical vs categorical)
+- Missing value handling using `SimpleImputer`
+- One-Hot Encoding for categorical variables
+- `ColumnTransformer` for clean preprocessing
+- `Pipeline` to prevent data leakage
+- Model comparison using cross-validation
+- Hyperparameter tuning with `GridSearchCV`
+- Clear evaluation using multiple metrics
 
-Compare multiple classification models
+---
 
-Tune hyperparameters with GridSearchCV
+## Models Implemented
+The notebook compares multiple classifiers using the **same preprocessing pipeline**:
 
-Evaluate models using cross-validation and classification metrics
+- **Logistic Regression**
+- **Random Forest Classifier**
+- **XGBoost Classifier**
 
-Dataset
+Each model is:
+- Wrapped in a `Pipeline`
+- Tuned using `GridSearchCV`
+- Evaluated using cross-validation and hold-out validation data
 
-Target: Survived (0 = No, 1 = Yes)
+---
 
-Features: Age, Sex, Fare, Pclass, Embarked, SibSp, Parch, and engineered features such as passenger titles and child indicators
+## Evaluation Metrics
+- Accuracy
+- Confusion Matrix
+- Classification Report (Precision, Recall, F1-Score)
+- Cross-Validation Mean Accuracy
 
-Feature Engineering
+This ensures the selected model generalizes well rather than overfitting.
 
-Title extraction from names
-
-Age imputation
-
-Child indicator feature
-
-Explicit handling of missing categorical values
-
-Numerical and categorical preprocessing via ColumnTransformer
-
-Models Used
-
-Logistic Regression
-
-Random Forest
-
-XGBoost
-
-All models are trained using scikit-learn Pipelines to prevent data leakage.
-
-Evaluation
-
-5-fold cross-validation
-
-GridSearchCV for hyperparameter tuning
-
-Metrics: Accuracy, Precision, Recall, F1-score, Confusion Matrix
-
-Project Structure
-titanic-classification/
-├── titanic-classification.ipynb
-├── README.md
-
-Tech Stack
-
-Python, pandas, numpy, scikit-learn, XGBoost, Jupyter Notebook
